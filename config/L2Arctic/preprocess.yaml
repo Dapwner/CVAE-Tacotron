@@ -1,0 +1,34 @@
+dataset: "L2Arctic"
+metadata: "L2Artic/train.txt"
+accents: ["Arabic", "Chinese", "Hindi", "Korean", "Spanish", "Vietnamese"]
+
+path:
+  corpus_path: "/666/dsets/L2arcticsplit22"
+  wav_tag: "eval"
+  wav_dir: "wav"
+  txt_dir: "transcript"
+  preprocessed_path: "./preprocessed_data/L2Arctic"
+  # preprocessed_path: "/666/ICASSP-CVAE/CVAE-TTS/preprocessed_data/L2Arctic"
+
+preprocessing:
+  sanity_check: False # if Ture, then preprocess a single data and quit
+  speaker_embedder: "none" # support 'none', 'DeepSpeaker'
+  text:
+    text_cleaners: ["english_cleaners"]
+    language: "en"
+  audio:
+    sampling_rate: 22050
+    max_wav_value: 32768.0
+    skip_len: 14848
+    trim_top_db: 23
+    silence_audio_size: 5
+    pre_emphasis: False
+  stft:
+    filter_length: 1024
+    hop_length: 256
+    win_length: 1024
+  mel:
+    n_mel_channels: 80
+    mel_fmin: 0
+    mel_fmax: 8000 # please set to 8000 for HiFi-GAN vocoder, set to null for MelGAN vocoder
+    normalize: False
