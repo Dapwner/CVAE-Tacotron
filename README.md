@@ -1,5 +1,5 @@
 # CVAE-Tacotron
-Code for CVAE-NL from the ICASSP 2023 paper submission named Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder
+Code for the CVAE-NL model from the ICASSP 2023 paper submission named Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder
 
 
 
