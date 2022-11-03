@@ -195,64 +195,54 @@ def synthesize_batch(model, args, configs, mel_stats, vocoder, loader):
 if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
-    # parser.add_argument("--restore_step", type=int, required=True)
-    # parser.add_argument(
-    #     "--mode",
-    #     type=str,
-    #     choices=["batch", "single"],
-    #     required=True,
-    #     help="Synthesize a whole dataset or a single sentence",
-    # )
-    # parser.add_argument(
-    #     "--source",
-    #     type=str,
-    #     default=None,
-    #     help="path to a source file with format like train.txt and val.txt, for batch mode only",
-    # )
-    # parser.add_argument(
-    #     "--text",
-    #     type=str,
-    #     default=None,
-    #     help="raw text to synthesize, for single-sentence mode only",
-    # )
-    # parser.add_argument(
-    #     "--speaker_id",
-    #     type=str,
-    #     default="p225",
-    #     help="speaker ID for multi-speaker synthesis, for single-sentence mode only",
-    # )
-    # parser.add_argument(
-    #     "--basename",
-    #     type=str,
-    #     default="p225-012",
-    #     help="Reference audio for the speaker, for single-sentence mode only",
-    # )
+    parser.add_argument("--restore_step", type=int, required=True)
+    parser.add_argument(
+        "--mode",
+        type=str,
+        choices=["batch", "single", "sample"],
+        required=True,
+        default="sample"
+        help="Synthesize a whole dataset or a single sentence",
+    )
+    parser.add_argument(
+        "--source",
+        type=str,
+        default=None,
+        help="path to a source file with format like train.txt and val.txt, for batch mode only",
+    )
+    parser.add_argument(
+        "--text",
+        type=str,
+        default='He turned sharply and faced Gregson across the table',
+        help="raw text to synthesize, for single and sample modes only",
+    )
+    parser.add_argument(
+        "--speaker_id",
+        type=str,
+        default="ABA",
+        help="speaker ID for sample mode only, for single mode this should be the same as the reference audio speaker",
+    )
+    parser.add_argument(
+        "--basename",
+        type=str,
+        default="ABA_a0009",
+        help="Reference audio for the speaker, for single-sentence mode only",
+    )
 
-    # parser.add_argument(
-    #     "--dataset",
-    #     type=str,
-    #     required=True,
-    #     help="name of dataset",
-    # )
+    parser.add_argument(
+        "--dataset",
+        type=str,
+        required=True,
+        default="L2Arctic",
+        help="name of dataset",
+    )
+    parser.add_argument(
+        "--accent",
+        type=str,
+        default="Arabic",
+        help="Accent name, e.g., Arabic, Chinese, Hindi, Korean, Spanish, Vietnamese",
+    )
     args = parser.parse_args()
-
-    args.dataset='L2Arctic'
-    # args.source='val.txt'
-    args.source=None
-    args.speaker_id='NCC'
-    # args.basename='SVBI_a0009'
-    # args.speaker_id='HKK'
-    args.accent='Korean'
-    args.accent2='Arabic'
-    # args.accw=1
-    # args.accw2=0
-    args.mode='sample'
-    args.restore_step=150000
-    args.text='He turned sharply and faced Gregson across the table'
-    # args.siga=0.001
-    # args.sigs=-0.001
-    # args.flata=True
-    # args.flats=True
 
 
     # Check source texts
