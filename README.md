@@ -1,6 +1,6 @@
 # CVAE-Tacotron
 Code for the CVAE-NL model from the Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder paper, available at: https://arxiv.org/abs/2211.03316
-
+Sample site available at: https://dapwner.github.io/CVAE-Tacotron/
 
 
 ## Training
