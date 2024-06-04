@@ -2,7 +2,7 @@
 Code for the CVAE-NL model from the Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder paper, available at: https://arxiv.org/abs/2211.03316
 Sample site available at: https://dapwner.github.io/CVAE-Tacotron/
 
-![alt text](https://github.com/Dapwner/CVAE-Tacotron/blob/main/CVAE-schematic.pdf?raw=true)
+![alt text](https://github.com/Dapwner/CVAE-Tacotron/blob/main/CVAE-schematic.pdf)
 
 ## Training
 First preprocess your data into mel spectrogram .npy arrays with the preprocess.py script
