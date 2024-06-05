@@ -7,14 +7,19 @@ Sample site available at: https://dapwner.github.io/CVAE-Tacotron/
 
 ![alt text](https://github.com/Dapwner/CVAE-Tacotron/blob/main/schematic.png)
 
+This code is built upon Comprehensive-TTS: https://github.com/keonlee9420/Comprehensive-Transformer-TTS
+
 ## Training
-First, download your dataset and preprocess the audio data into mel spectrogram .npy arrays with the preprocess.py script
+First, download your dataset and preprocess the audio data into mel spectrogram .npy arrays with the preprocess.py script.
+
 Then, to train the model, run CUDA_VISIBLE_DEVICES=X python train.py --dataset L2Arctic
 
 ## Inference
 Once trained, you can run CUDA_VISIBLE_DEVICES=X python synthesize.py --dataset L2Arctic --restore_step [N] --mode [batch/single/sample] --text [TXT] --speaker_id [SPID] --accent [ACC]
 
-Or run synthesize_debug.py in a debugger and figure out!
+SPID = ABA, ASI, NCC,... speaker ID from the L2Arctic dataset
+
+ACC = Arabic, Chinese, Hindi, Korean, Spanish, Vietnamese (accents from L2Arctic)
 
 ###Inference modes
 
