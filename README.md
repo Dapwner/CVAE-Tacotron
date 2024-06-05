@@ -1,5 +1,5 @@
 # CVAE-Tacotron
-Code for the CVAE-NL model from the Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder paper.
+Code for the CVAE-NL model from the Accented Text-to-Speech Synthesis with a Conditional Variational Autoencoder paper. In this Text-To-Speech (TTS) framework, you can pick a speaker A and assign them accent B and then generate their speech from text!
 
 Paper available at: https://arxiv.org/abs/2211.03316
 
