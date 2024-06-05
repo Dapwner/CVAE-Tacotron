@@ -12,16 +12,20 @@ This code is built upon Comprehensive-TTS: https://github.com/keonlee9420/Compre
 ## Training
 First, download your dataset and preprocess the audio data into mel spectrogram .npy arrays with the preprocess.py script.
 
-Then, to train the model, run CUDA_VISIBLE_DEVICES=X python train.py --dataset L2Arctic
-
+Then, to train the model, run
+```bash
+CUDA_VISIBLE_DEVICES=X python train.py --dataset L2Arctic
+```
 ## Inference
-Once trained, you can run CUDA_VISIBLE_DEVICES=X python synthesize.py --dataset L2Arctic --restore_step [N] --mode [batch/single/sample] --text [TXT] --speaker_id [SPID] --accent [ACC]
-
+Once trained, you can run
+```bash
+CUDA_VISIBLE_DEVICES=X python synthesize.py --dataset L2Arctic --restore_step [N] --mode [batch/single/sample] --text [TXT] --speaker_id [SPID] --accent [ACC]
+```
 SPID = ABA, ASI, NCC,... speaker ID from the L2Arctic dataset
 
 ACC = Arabic, Chinese, Hindi, Korean, Spanish, Vietnamese (accents from L2Arctic)
 
-###Inference modes
+### Inference modes
 
 "single": takes in a reference audio to be used for both speaker and accent branches
 
